@@ -23,11 +23,8 @@
 3C-P
 4'‑Fluoro-4‑methylaminorex
 4,4'‑DMAR
-4-AcO-DPT
 4-AcO-DPT (Pracetin)
-4-AcO-EPT
 4-AcO-EPT (Epracetin)
-4-AcO-MPT
 4-AcO-MPT (Mepracetin)
 4-BA
 4-CA
@@ -187,3 +184,20 @@ Zaleplon
 β-methylamphetamine
 β-phenylmethamphetamine
 αET
+4-Me-αET
+2C-T-3 (2C-T-20)
+2C-T-4
+2C-T-5
+2C-T-6
+2C-T-8
+2C-T-9
+2C-T-10
+2C-T-11
+2C-T-12
+2C-T-13
+2C-T-14
+2C-T-15
+2C-T-16
+2C-T-17
+2C-T-18
+BOD

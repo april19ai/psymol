@@ -1,25 +1,24 @@
-# Psymol
+# Psy mol
 
 ::INTRO TODO::
 
 
 ## Acknowledgements
 
-We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community for creating and maintaining a remarkable source of molecules and experiences.
-
+We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community for creating and maintaining the source of molecules and experiences used as the basis of this list.
 
 # Method
 
 ## Outline
 
-- Query the PsychonautWiki for a seed set of compounds
+- Queried the PsychonautWiki for a seed set of compounds
 - Clean where needed
 - Add compounds to the set.
 - Lookup SMILES description of each compound
 
 ## Detailed steps
 
-1. Queried [PsychonautWiki](https://psychonautwiki.org/) API for all substances, giving 290 results as of 18 June 2021.
+1. Queried PsychonautWiki API for all substances, giving 290 results as of 18 June 2021.
 
     We used the following query:
 
@@ -39,32 +38,13 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
     - `url`, the substance page in PsychonautWiki
     - `class0`, `class1`, `class2`, up to three "psychoactive" classes.
 
-    Taking the three class columns together, giving 290 × 3 = 870 cells, the classes are:
-
-    | Cell Count | Class Value                   |
-    |------------|-------------------------------|
-    | 616        | no value for the class cell   |
-    |   4        | Antipsychotic                 | 
-    |   9        | Cannabinoid                   | 
-    |   4        | Deliriant                     | 
-    |  33        | Depressant                    | 
-    |  22        | Dissociatives                 | 
-    |  22        | Entactogens                   | 
-    |   1        | Eugeroic                      | 
-    |   4        | Hallucinogens                 | 
-    |  18        | Nootropic                     | 
-    |   2        | Oneirogen                     | 
-    |  22        | Opioids                       | 
-    |  59        | Psychedelics                  | 
-    |   1        | Sedative                      | 
-    |  53        | Stimulants                    | 
-               
+    The classes are values such as "Psychedelics", "Sedative", and are described later in this file.
 
 2. We manually removed the following records:
 
-- An "experience" included in the list of substances (reported as [issue 41](https://github.com/psychonautwiki/bifrost/issues/41)).
+    - An "experience" included in the list of substances (reported as [issue 41](https://github.com/psychonautwiki/bifrost/issues/41)).
 
-- References to lists of substances were removed: Substituted aminorexes, Substituted amphetamines, Substituted cathinones, Substituted morphinans, Substituted phenethylamines, Substituted phenidates, Substituted tryptamines, Stimulants, Barbiturates, Cannabinoid, Cytochrome P450 inhibitors, Depressant, Entheogen, Hallucinogens, Prodrug, Psychedelics, Sedative.
+    - Pages describing classes of substances and plants were removed: Substituted aminorexes, Substituted amphetamines, Substituted cathinones, Substituted morphinans, Substituted phenethylamines, Substituted phenidates, Substituted tryptamines, Stimulants, Barbiturates, Cannabinoid, Cytochrome P450 inhibitors, Depressant, Entheogen, Hallucinogens, Prodrug, Psychedelics, Sedative, 2C-T-x, 2C-x, Synthetic cannabinoid, Serotonergic psychedelic, Mandragora officinarum (botany), Selective serotonin reuptake inhibitor, Serotonin-norepinephrine reuptake inhibitor, Racetams, Benzodiazepines, Amanita muscaria, Anadenanthera peregrina, Antipsychotic, Arylcyclohexylamines, Banisteriopsis caapi, Changa, Classical psychedelic, DOx, Datura (botany), Deliriant, Entactogens, Gabapentinoids, Hallucinogens, Harmala alkaloid, Hyoscyamus niger (botany), Hypnotic, MAOI, Mandragora, Morning glory, Nootropic, Opioids, Peganum harmala, Piper nigrum (botany), Poppers, RIMA, Thienodiazepines, Xanthines, Beta-Carboline, 25x-NBOMe, 25x-NBOH. 
 
 3. In reviewing the lists of substance pages removed, we noted the following substances had pages but were not included in the original query results (we checked the query results by "compound" and "common name"). This was rasied as [issue 42](https://github.com/psychonautwiki/bifrost/issues/42).
 
@@ -91,7 +71,18 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
     - https://psychonautwiki.org/wiki/ETH-LAD
     - https://psychonautwiki.org/wiki/MIPLA
     - https://psychonautwiki.org/wiki/PRO-LAD
+    - https://psychonautwiki.org/wiki/EPT
+    - https://psychonautwiki.org/wiki/MET
+    - https://psychonautwiki.org/wiki/4-HO-DiPT
+    - https://psychonautwiki.org/wiki/4-HO-EPT
+    - https://psychonautwiki.org/wiki/4-HO-MiPT
+    - https://psychonautwiki.org/wiki/2C-T-21
+    - https://psychonautwiki.org/wiki/2C-T-7
+    - https://psychonautwiki.org/wiki/DOI
+    - https://psychonautwiki.org/wiki/DOM
 
-- In removing the lists of substance pages, we noticed that the following substances were referenced but had no page on the Wiki (or the page was an empty stub).
+    ...and we also filled in class columns where given.
 
-    We've captured these in the file _missing.txt_ in this repositiory. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
+- In removing the lists of substance pages, we noticed that substances were referenced but had no page on the Wiki (or the page was an empty stub).
+
+    We've captured these in the file [missing.txt](missing.txt) in this repositiory. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
