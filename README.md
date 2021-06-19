@@ -74,8 +74,6 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
     - https://psychonautwiki.org/wiki/EPT
     - https://psychonautwiki.org/wiki/MET
     - https://psychonautwiki.org/wiki/4-HO-DiPT
-    - https://psychonautwiki.org/wiki/4-HO-EPT
-    - https://psychonautwiki.org/wiki/4-HO-MiPT
     - https://psychonautwiki.org/wiki/2C-T-21
     - https://psychonautwiki.org/wiki/2C-T-7
     - https://psychonautwiki.org/wiki/DOI
@@ -86,3 +84,23 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
 - In removing the lists of substance pages, we noticed that substances were referenced but had no page on the Wiki (or the page was an empty stub).
 
     We've captured these in the file [missing.txt](missing.txt) in this repositiory. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
+
+4. Removed any duplicate molecues based on molecule name only, resulting in 259 records int the file [psychonaut.csv](psychonaut.csv).
+
+5. Added SMILES descriptions for each molecule.
+
+    From manual inspection of a few records, it appears PsychonautWiki links to Wikipedia or [TiHKAL / Isomardesign](https://isomerdesign.com) for molecular descriptions. To automate the lookup of SMILES values, we used Wikipedia.
+ 
+    Wikipedia has already been mined for SMILES entries by [Ertl et al (2015)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0061-y). We used a Jupyter notebook called [merge.ipynb](merge.ipynb).
+
+    This procedure matched all but 79 records. 
+    
+6. We manually interrogated Wikipedia to complete the set. The resulting records are in the file [index.csv](index.csv)
+
+
+## Additional information
+
+TODO: how to run the notebook
+
+
+

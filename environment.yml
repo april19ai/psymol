@@ -1,0 +1,6 @@
+name: psymol 
+dependencies:
+  - python=3
+  - pandas
+  - numpy
+  - jupyter
