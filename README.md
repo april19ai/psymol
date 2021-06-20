@@ -89,13 +89,25 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
 
 5. Added SMILES descriptions for each molecule.
 
-    From manual inspection of a few records, it appears PsychonautWiki links to Wikipedia or [TiHKAL / Isomardesign](https://isomerdesign.com) for molecular descriptions. To automate the lookup of SMILES values, we used Wikipedia.
+    From manual inspection of a few records, it appears PsychonautWiki links to Wikipedia or [TiHKAL / Isomerdesign](https://isomerdesign.com) for molecular descriptions. To automate the lookup of SMILES values, we used Wikipedia.
  
-    Wikipedia has already been mined for SMILES entries by [Ertl et al (2015)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0061-y). We used a Jupyter notebook called [merge.ipynb](merge.ipynb).
+    Wikipedia has already been mined for SMILES entries by [Ertl et al (2015)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0061-y). We used this data in a Jupyter notebook called [merge.ipynb](merge.ipynb).
 
     This procedure matched all but 79 records. 
-    
-6. We manually interrogated Wikipedia to complete the set. The resulting records are in the file [index.csv](index.csv)
+
+    In addition, we searched for the "missing" molecules in the Wikipedia data, and found 82 molecules
+
+    All these 341 records were saved as [combined.csv](combined.csv).
+
+    | Set | Count |
+    |---------|-------|
+    | PsychonautWiki matched to Wikipedia | 180 |
+    | "Missing" records matched to Wikipedia | 82 |
+    | Remaining unmatched PsychonautWiki records | 79 |
+    | TOTAL | 341 | 
+
+
+6. ::TODO:: We manually interrogated Wikipedia to complete the set. The resulting records are in the file [index.csv](index.csv)
 
 
 ## Additional information
