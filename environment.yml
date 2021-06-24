@@ -5,3 +5,4 @@ dependencies:
   - numpy
   - jupyter
   - rdkit
+  - tabulate

@@ -15,13 +15,12 @@ We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community f
 
 ## Description of the data
 
-The [library.csv](library.csv) file contains 408 molecules, in the following columns:
+The [library.csv](library.csv) file contains 335 molecules, with the following columns:
 
 - `name` -- the name of the molecule from PsychonautWiki.
 - `url` -- the PsychonautWiki web address. 
 - `class0`, `class1`, `class2` -- possibly empty columns representing one or more class names for the molecule from PsychonautWiki
 - `smiles` -- the SMILES molecule description.
-- `wikipedia_url`, `isomerdesign_url` -- possibly empty, but if the molecule SMILES was manually looked up, the source web address will be in one of these columns.
 
 Please see the _Methods_, below for how we currated this dataset.
 
@@ -134,16 +133,46 @@ Please see the _Methods_, below for how we currated this dataset.
 
 7. Finally, we combined the automatic and manually found records to produce [library.csv](library.csv). 
 
+    The classes are:
+
+    |               |   class |
+    |:--------------|--------:|
+    |               |     483 |
+    | Psychedelics  |      77 |
+    | Stimulants    |      58 |
+    | Depressant    |      32 |
+    | Entactogens   |      23 |
+    | Dissociatives |      21 |
+    | Opioids       |      21 |
+    | Nootropic     |      19 |
+    | Cannabinoid   |      10 |
+    | Antipsychotic |       4 |
+    | Hallucinogens |       4 |
+    | Deliriant     |       3 |
+    | Oneirogen     |       2 |
+    | Eugeroic      |       1 |
+    | Sedative      |       1 |
 
 
---
+
+
+---
 
 ## Additional information
 
-TODO: how to run the notebook
+### To run the notebook locally using Conda
 
-## Questions:
+For Unix-like machines:
 
-- what about multiple smiles, e.g., https://en.wikipedia.org/wiki/1,4-Butanediol
+```
+conda env create -f environment.yml
+conda activate semantic
+jupyter notebook
+```
 
+To update after changing dependencies:
+
+```
+conda env update -f environment.yml
+```
 
