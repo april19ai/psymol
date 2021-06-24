@@ -1,16 +1,31 @@
 # Psy mol
 
-TODO Intro words
-
-## Description of the data
-
-TODO
+This repositry contains a CSV file listing molecules found on the PsychonautWiki,
+with corresponding SMILES descriptions.
 
 ## NO WARRANTY
 
-## Acknowledgements
+We make no warranty, expressed or implied, including the warranties of merchantability and fitness for a particular purpose, nor assumes any legal liability  or responsibility for the accuracy, reliability, completeness, safety or utility of these data, or for the improper or incorrect use of these data.  
+
+The user is responsible to verify the limitations of the data and to use the data accordingly.
+
+## Acknowledgement
 
 We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community for creating and maintaining the source of molecules and experiences used as the basis of this list.
+
+## Description of the data
+
+The [library.csv](library.csv) file contains 408 molecules, in the following columns:
+
+- `name` -- the name of the molecule from PsychonautWiki.
+- `url` -- the PsychonautWiki web address. 
+- `class0`, `class1`, `class2` -- possibly empty columns representing one or more class names for the molecule from PsychonautWiki
+- `smiles` -- the SMILES molecule description.
+- `wikipedia_url`, `isomerdesign_url` -- possibly empty, but if the molecule SMILES was manually looked up, the source web address will be in one of these columns.
+
+Please see the _Methods_, below for how we currated this dataset.
+
+---
 
 # Method
 
@@ -120,6 +135,7 @@ where mutliple, took first
 
 7. Finally, we produced [library.csv](library.csv) to incorporate the found molecules.
 
+--
 
 ## Additional information
 
