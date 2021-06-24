@@ -1,6 +1,6 @@
 # Psy mol
 
-This repositry contains a CSV file listing molecules found on the PsychonautWiki,
+This repository contains a CSV file listing molecules found on the PsychonautWiki,
 with corresponding SMILES descriptions.
 
 ## NO WARRANTY
@@ -9,7 +9,7 @@ We make no warranty, expressed or implied, including the warranties of merchanta
 
 The user is responsible to verify the limitations of the data and to use the data accordingly.
 
-## Acknowledgement
+## Acknowledgment
 
 We are grateful to the [PsychonautWiki](https://psychonautwiki.org/) community for creating and maintaining the source of molecules and experiences used as the basis of this list.
 
@@ -22,7 +22,7 @@ The [library.csv](library.csv) file contains 335 molecules, with the following c
 - `class0`, `class1`, `class2` -- possibly empty columns representing one or more class names for the molecule from PsychonautWiki
 - `smiles` -- the SMILES molecule description.
 
-Please see the _Methods_, below for how we currated this dataset.
+Please see the _Methods_, below for how we curated this dataset.
 
 ---
 
@@ -102,9 +102,9 @@ Please see the _Methods_, below for how we currated this dataset.
 
 - In removing the lists of substance pages, we noticed that substances were referenced but had no page on the Wiki (or the page was an empty stub).
 
-    We've captured these in the file [intermediate/missing.txt](intermediate/missing.txt) in this repositiory. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
+    We've captured these in the file [intermediate/missing.txt](intermediate/missing.txt) in this repository. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
 
-4. Removed any duplicate molecues based on molecule name only, resulting in 253 records in the file [psychonaut.csv](psychonaut.csv).
+4. Removed any duplicate molecules based on molecule name only, resulting in 253 records in the file [psychonaut.csv](psychonaut.csv).
 
 5. Added SMILES descriptions for each molecule.
 
