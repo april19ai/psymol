@@ -58,7 +58,7 @@ Please see the _Methods_, below for how we currated this dataset.
     - `url`, the substance page in PsychonautWiki
     - `class0`, `class1`, `class2`, up to three "psychoactive" classes.
 
-    The classes are values such as "Psychedelics", "Sedative", and are described later in this file.
+    The classes are values such as "Psychedelics", "Sedative", and are described below.
 
 2. We manually removed the following records:
 
@@ -105,35 +105,36 @@ Please see the _Methods_, below for how we currated this dataset.
 
     We've captured these in the file [intermediate/missing.txt](intermediate/missing.txt) in this repositiory. There are also a large number of missing entries (in red) at https://psychonautwiki.org/wiki/Depressant
 
-4. Removed any duplicate molecues based on molecule name only, resulting in 259 records int the file [psychonaut.csv](psychonaut.csv).
+4. Removed any duplicate molecues based on molecule name only, resulting in 253 records in the file [psychonaut.csv](psychonaut.csv).
 
 5. Added SMILES descriptions for each molecule.
 
     From manual inspection of a few records, it appears PsychonautWiki links to Wikipedia or [TiHKAL / Isomerdesign](https://isomerdesign.com) for molecular descriptions. To automate the lookup of SMILES values, we used Wikipedia.
  
-    Wikipedia has already been mined for SMILES entries by [Ertl et al (2015)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0061-y). We used this data in a Jupyter notebook called [merge.ipynb](merge.ipynb).
+    Wikipedia has already been mined for SMILES entries by [Ertl et al (2015)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0061-y). We used this data in a Jupyter notebook called [merge.ipynb](merge.ipynb) 
+    to join the PsychonautWiki and Wikipedia records.
 
-    This procedure matched all but 79 records. 
+    This procedure matched all but 73 records. 
 
-    In addition, we searched for the "missing" molecules in the Wikipedia data, and found 82 molecules
+    In addition, we searched for the "missing.txt" molecules in the Wikipedia data, and found 82 molecules
 
-    All these 341 records were saved as [intermediate/combined.csv](intermediate/combined.csv).
+    All these 335 records were saved as [intermediate/combined.csv](intermediate/combined.csv).
 
-    | Set | Count |
+    | Set     | Count |
     |---------|-------|
-    | PsychonautWiki matched to Wikipedia | 180 |
-    | "Missing" records matched to Wikipedia | 82 |
-    | Remaining unmatched PsychonautWiki records | 79 |
-    | TOTAL | 341 | 
+    | PsychonautWiki matched to Wikipedia        | 180 |
+    | "Missing" records matched to Wikipedia     | 82 |
+    | Remaining unmatched PsychonautWiki records | 73 |
+    | TOTAL | 335 | 
 
 
-6. For the 79 unmatched records, we manually interrogated Wikipedia and recorded the molecules in [intermediate/found.csv](intermediate/found.csv). We added a `wikipedia_url` column for these records; and when not found at wikiepdia the `isomerdesign_url` column was populated. 
+6. For the 73 unmatched records, we manually interrogated Wikipedia and recorded the molecules in [intermediate/manually-found.csv](intermediate/manually-found.csv). We added a `wikipedia_url` column for these records; and when not found at Wikipedia, the `isomerdesign_url` column was populated. 
 
-This manually matching was carried out on 23 and 24 June 2021.
+    This manually matching was carried out on 23 and 24 June 2021. Where multiple SMILES values were given, we took the first one.
 
-where mutliple, took first
+7. Finally, we combined the automatic and manually found records to produce [library.csv](library.csv). 
 
-7. Finally, we produced [library.csv](library.csv) to incorporate the found molecules.
+
 
 --
 
