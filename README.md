@@ -170,7 +170,7 @@ TODO
 
     This step added the column `shulgin` with a value of `T` if the source was TiHAL, `P` for PiHKAL, and blank otherwise.
 
-9. The script `can.ipynb` replaced SMILES strings with a canonical form so we can deduplicate the this. The form of this converstion is:
+9. The script `can.ipynb` replaced SMILES strings with a canonical form so we can deduplicate the list. The form of this conversion is:
 
     ```
     Chem.MolToSmiles(Chem.MolFromSmiles(smi),True)
