@@ -24,6 +24,12 @@ The [library.csv](library.csv) file contains 335 molecules, with the following c
 
 Please see the _Methods_, below for how we curated this dataset.
 
+In addition, the [library+shulgin.csv](library_shulgin.csv) file contains additional molecules reported by Shulgin. See from step 8, below, for details.
+
+## How to cite this data
+
+TODO
+
 ---
 
 # Method
@@ -153,8 +159,42 @@ Please see the _Methods_, below for how we curated this dataset.
     | Eugeroic      |       1 |
     | Sedative      |       1 |
 
+8. We additionally added the molecules reported by Shulgin in TiHKAL and PiHKAL by hand. To do this we used the following data sources:
 
+    | Book | Molecule Count | Source | Accessed |
+    |------|----------------|--------|----------|
+    | PiHKAL | 179 | https://psychonautwiki.org/wiki/PiHKAL | 6 Oct 2021 |
+    | TiHKAL |  55 | https://psychonautwiki.org/wiki/TiHKAL | 5 Oct 2021 |
 
+    These records are in [intermediate/library+shulgin-raw.csv](intermediate/library+shulgin-raw.csv) (called "raw" as the SMILES have not been normalized or deduplicated). This file contains 508 rows.
+
+    This step added the column `shulgin` with a value of `T` if the source was TiHAL, `P` for PiHKAL, and blank otherwise.
+
+9. The script `can.ipynb` replaced SMILES strings with a canonical form so we can deduplicate the this. The form of this converstion is:
+
+    ```
+    Chem.MolToSmiles(Chem.MolFromSmiles(smi),True)
+    ```
+
+    The result is [intermediate/library+shulgin-can.csv](intermediate/library+shulgin-can.csv). This added a new column for the cannonical SMILES string, and 25 rows were unchanged and 483 were different from the original SMILES string.
+
+10. Deduplication of SMILES records. The following records were identified as duplicates:
+
+    ```
+    $ xsv select can library+shulgin-can.csv | sort | uniq -d
+    C=C(C)COc1c(OC)cc(CCN)cc1OC   (MAL and Methallylescaline)
+    C=CCOc1c(OC)cc(CCN)cc1OC      (AL and Allylescaline)
+    CC(C)N(C)CCc1c[nH]c2ccccc12   (MiPT duplicated)
+    CCOc1cc(OC)c(CC(C)N)cc1OC     (incorrect entry for Proscaline, corrected)
+    CN(C)CCc1c[nH]c2cccc(O)c12    (Psilocin and 4-HO-DMT)
+    CNC(C)Cc1ccc(OC)cc1           (PMMA and METHYL-MA)
+    COc1ccc(CC(C)N)cc1            (PMA and 14-MA)
+    NCCc1ccccc1 (PEA and Phenethylamine)
+    ```
+
+    These were manually merged into a single records and the cannonical form of the SMILES string was saved as the `smiles` column in [library+shulgin.csv](library+shulgin.csv).
+
+    The final file contains 502 compounds
 
 ---
 
