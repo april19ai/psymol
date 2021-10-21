@@ -206,7 +206,7 @@ For Unix-like machines:
 
 ```
 conda env create -f environment.yml
-conda activate semantic
+conda activate psymol
 jupyter notebook
 ```
 
