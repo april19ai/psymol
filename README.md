@@ -24,7 +24,7 @@ The [library.csv](library.csv) file contains 335 molecules, with the following c
 
 Please see the _Methods_, below for how we curated this dataset.
 
-In addition, the [library+shulgin.csv](library_shulgin.csv) file contains additional molecules reported by Shulgin. See from step 8, below, for details.
+In addition, the [library+shulgin.csv](library+shulgin.csv) file contains additional molecules reported by Shulgin. See from step 8, below, for details.
 
 ## How to cite this data
 
