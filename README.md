@@ -194,7 +194,9 @@ TODO
 
     These were manually merged into a single records and the cannonical form of the SMILES string was saved as the `smiles` column in [library+shulgin.csv](library+shulgin.csv).
 
-    The final file contains 502 compounds, with InChI hash keys added.
+    When adding InChI has keys as a column to the CSV, we found one other duplicate (Proscaline) and removed it.
+
+    The final file contains 501 compounds.
 
 ---
 
