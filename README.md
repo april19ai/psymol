@@ -194,7 +194,7 @@ TODO
 
     These were manually merged into a single records and the cannonical form of the SMILES string was saved as the `smiles` column in [library+shulgin.csv](library+shulgin.csv).
 
-    The final file contains 502 compounds
+    The final file contains 502 compounds, with InChI hash keys added.
 
 ---
 
